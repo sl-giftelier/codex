@@ -10,9 +10,17 @@
     <main class="layout">
       <header class="header">
         <h1>Ping Pong</h1>
-        <p>Use <strong>W/S</strong> or <strong>Arrow Up/Down</strong> to move your paddle. First to 10 wins!</p>
+        <p>Use <strong>W/S</strong>, <strong>Arrow Up/Down</strong>, or drag on the table to move your paddle. First to 10 wins!</p>
       </header>
-      <canvas id="game" width="800" height="500" aria-label="Ping pong game"></canvas>
+      <div class="stage">
+        <canvas id="game" width="800" height="500" aria-label="Ping pong game"></canvas>
+        <div id="overlay" class="overlay" hidden>
+          <div class="overlay-card" role="dialog" aria-modal="false" aria-live="polite">
+            <p id="overlayMessage"></p>
+            <button id="playButton" type="button">Start Match</button>
+          </div>
+        </div>
+      </div>
       <section class="scoreboard" aria-live="polite">
         <div class="score">
           <span class="label">Player</span>
@@ -23,8 +31,9 @@
           <span id="aiScore">0</span>
         </div>
       </section>
+      <p id="status" class="status" role="status" aria-live="polite">Press Start to begin.</p>
       <footer class="footer">
-        <button id="restart" type="button">Restart</button>
+        <button id="restart" type="button">Restart Match</button>
       </footer>
     </main>
     <script src="pingpong.js" type="module"></script>
