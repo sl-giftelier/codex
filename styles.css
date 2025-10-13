@@ -101,6 +101,51 @@ canvas {
   white-space: pre-line;
 }
 
+.match-form {
+  display: grid;
+  gap: 1rem;
+  text-align: left;
+}
+
+.field-group {
+  display: grid;
+  gap: 0.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.field-group legend {
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text);
+}
+
+.option input[type='radio'] {
+  accent-color: var(--accent);
+}
+
+.field-group select {
+  width: 100%;
+  background: rgba(12, 12, 12, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  color: var(--text);
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+}
+
+[data-difficulty][hidden] {
+  display: none;
+}
+
 .scoreboard {
   display: flex;
   justify-content: center;
