@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ping Pong</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <header class="header">
+        <h1>Ping Pong</h1>
+        <p>Use <strong>W/S</strong> or <strong>Arrow Up/Down</strong> to move your paddle. First to 10 wins!</p>
+      </header>
+      <canvas id="game" width="800" height="500" aria-label="Ping pong game"></canvas>
+      <section class="scoreboard" aria-live="polite">
+        <div class="score">
+          <span class="label">Player</span>
+          <span id="playerScore">0</span>
+        </div>
+        <div class="score">
+          <span class="label">AI</span>
+          <span id="aiScore">0</span>
+        </div>
+      </section>
+      <footer class="footer">
+        <button id="restart" type="button">Restart</button>
+      </footer>
+    </main>
+    <script src="pingpong.js" type="module"></script>
+  </body>
+</html>
