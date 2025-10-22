@@ -21,12 +21,18 @@ const mimeTypes = {
 };
 
 function resolveFile(urlPath) {
-  if (urlPath === '/' || urlPath === '') {
+  const [cleanPath] = (urlPath ?? '/').split(/[?#]/);
+
+  if (cleanPath === '/' || cleanPath === '') {
     return path.join(__dirname, 'index.html');
   }
 
-  const safePath = path.normalize(urlPath).replace(/^\.\//, '');
-  return path.join(__dirname, safePath);
+  const normalized = path
+    .normalize(cleanPath)
+    .replace(/^([/\\])+/, '')
+    .replace(/^((\.\.)[/\\])+/, '');
+
+  return path.join(__dirname, normalized);
 }
 
 const server = http.createServer(async (req, res) => {
