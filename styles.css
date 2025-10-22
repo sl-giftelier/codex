@@ -1,0 +1,118 @@
+:root {
+  --bg: #1a1a1a;
+  --surface: rgba(0, 0, 0, 0.7);
+  --text: #ffffff;
+  --accent: #4caf50;
+  --accent-hover: #45a049;
+  --shadow: rgba(255, 255, 255, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Press Start 2P', cursive;
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/pressstart2p/v12/e3t4euO8T-267oIAQAu6jDQyK3nIe_E.woff2') format('woff2');
+}
+
+.game-container {
+  width: 100vw;
+  height: 100vh;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.score-board {
+  width: min(90vw, 800px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  text-transform: uppercase;
+}
+
+canvas {
+  width: min(90vw, 854px);
+  max-width: 854px;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 20px var(--shadow);
+  display: block;
+}
+
+.message-box {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  background: var(--surface);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border-radius: 1rem;
+  text-align: center;
+  display: none;
+  min-width: min(90vw, 380px);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.message-box h2 {
+  font-size: clamp(1.25rem, 3vw, 2.5rem);
+  margin-bottom: 1rem;
+}
+
+.message-box p {
+  font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.message-box button {
+  font-family: 'Press Start 2P', cursive;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  padding: 0.75rem 1.5rem;
+  background: var(--accent);
+  color: var(--text);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.15s ease;
+}
+
+.message-box button:hover,
+.message-box button:focus {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+@media (max-height: 600px) {
+  .game-container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  canvas {
+    width: min(92vw, 720px);
+  }
+}

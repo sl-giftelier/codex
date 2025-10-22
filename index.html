@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ping Pong Classic</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="gameContainer" class="game-container">
+      <div class="score-board">
+        <div id="playerScore" aria-label="Player score">0</div>
+        <div id="aiScore" aria-label="AI score">0</div>
+      </div>
+      <canvas id="gameCanvas" aria-label="Ping pong play field"></canvas>
+      <div id="messageBox" class="message-box" role="dialog" aria-modal="true">
+        <h2 id="messageTitle">Ping Pong</h2>
+        <p id="messageText">First to 5 points wins!</p>
+        <button id="actionButton" type="button">Start Game</button>
+      </div>
+    </div>
+    <script src="pingpong.js" defer></script>
+  </body>
+</html>

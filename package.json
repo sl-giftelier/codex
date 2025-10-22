@@ -1,0 +1,13 @@
+{
+  "name": "ping-pong-arcade",
+  "version": "1.0.0",
+  "description": "Playable browser ping pong game with a tiny Node.js static server",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --check pingpong.js"
+  },
+  "keywords": ["ping-pong", "game", "browser"],
+  "author": "",
+  "license": "MIT"
+}
