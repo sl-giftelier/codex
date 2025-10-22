@@ -1,6 +1,6 @@
-# Ping Pong Arcade
+# Ping Pong Classic
 
-A browser-based ping pong game featuring single-player AI and local two-player modes. The project now ships with a tiny Node.js server so you can run it the same way across browsers instead of double-clicking the HTML file.
+A retro-inspired browser ping pong game with responsive canvas rendering, mouse/touch steering, optional keyboard controls, and a lightweight AI opponent. A tiny Node.js static server is bundled so you can launch the experience consistently across browsers.
 
 ## Prerequisites
 
@@ -8,7 +8,7 @@ A browser-based ping pong game featuring single-player AI and local two-player m
 
 ## Install
 
-No dependencies are required, but grab the project dependencies so npm will track the lock file.
+Install once so npm tracks the lockfile and scripts:
 
 ```bash
 npm install
@@ -16,17 +16,17 @@ npm install
 
 ## Run the game
 
-Start the bundled server and open the URL it prints (defaults to <http://localhost:3000>).
+Start the bundled static server and open the printed URL (defaults to <http://localhost:3000>):
 
 ```bash
 npm start
 ```
 
-The server keeps the static assets in sync and handles correct MIME types so scripts always execute.
+The server takes care of MIME types and keeps asset paths predictable, so the game loads without having to open local files manually.
 
 ## Tests
 
-The project includes a lightweight syntax check to make sure the JavaScript stays valid.
+A lightweight syntax check is included to ensure the JavaScript stays valid:
 
 ```bash
 npm test
@@ -34,8 +34,8 @@ npm test
 
 ## Controls
 
-- **Single player**: Move with `W/S`, `↑/↓`, or drag/tap on the table
-- **Two player**: Player 1 uses `W/S`, Player 2 uses `↑/↓`
-- Press **Restart Match** or **Start Match** in the overlay to reset the game
+- Drag, mouse move, or touch the canvas to steer your paddle
+- Use `W/S` or `↑/↓` for keyboard play
+- First player to 5 points wins—hit **Start Game** (or **Play Again**) from the overlay to jump into a match
 
 Enjoy the rally!

@@ -3,63 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ping Pong</title>
+    <title>Ping Pong Classic</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="layout">
-      <header class="header">
-        <h1>Ping Pong</h1>
-        <p>
-          Use <strong>W/S</strong> to move the left paddle and <strong>Arrow Up/Down</strong> for the right paddle when
-          playing with a friend. In single player you can also drag or tap on the table to steer your paddle. First to 10
-          wins!
-        </p>
-      </header>
-      <div class="stage">
-        <canvas id="game" width="800" height="500" aria-label="Ping pong game"></canvas>
-        <div id="overlay" class="overlay" hidden>
-          <div class="overlay-card" role="dialog" aria-modal="false" aria-live="polite">
-            <p id="overlayMessage"></p>
-            <form id="matchForm" class="match-form" aria-label="Match setup" autocomplete="off">
-              <fieldset class="field-group">
-                <legend>Opponent</legend>
-                <label class="option">
-                  <input type="radio" name="opponent" value="ai" checked />
-                  AI Rival
-                </label>
-                <label class="option">
-                  <input type="radio" name="opponent" value="friend" />
-                  Local Friend
-                </label>
-              </fieldset>
-              <label class="field-group" data-difficulty>
-                Difficulty
-                <select id="difficulty" name="difficulty">
-                  <option value="normal">Normal</option>
-                  <option value="hard">Hard</option>
-                </select>
-              </label>
-            </form>
-            <button id="playButton" type="button">Start Match</button>
-          </div>
-        </div>
+    <div id="gameContainer" class="game-container">
+      <div class="score-board">
+        <div id="playerScore" aria-label="Player score">0</div>
+        <div id="aiScore" aria-label="AI score">0</div>
       </div>
-      <section class="scoreboard" aria-live="polite">
-        <div class="score">
-          <span class="label">Player</span>
-          <span id="playerScore">0</span>
-        </div>
-        <div class="score">
-          <span class="label" id="opponentLabel">AI</span>
-          <span id="opponentScore">0</span>
-        </div>
-      </section>
-      <p id="status" class="status" role="status" aria-live="polite">Press Start to begin.</p>
-      <footer class="footer">
-        <button id="restart" type="button">Restart Match</button>
-      </footer>
-    </main>
+      <canvas id="gameCanvas" aria-label="Ping pong play field"></canvas>
+      <div id="messageBox" class="message-box" role="dialog" aria-modal="true">
+        <h2 id="messageTitle">Ping Pong</h2>
+        <p id="messageText">First to 5 points wins!</p>
+        <button id="actionButton" type="button">Start Game</button>
+      </div>
+    </div>
     <script src="pingpong.js" defer></script>
   </body>
 </html>
